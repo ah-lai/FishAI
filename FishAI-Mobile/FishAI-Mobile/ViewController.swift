@@ -19,6 +19,12 @@ class ViewController: UIViewController {
     @IBOutlet weak var tmpImage: UIImageView!
     @IBOutlet weak var resultLabel: UILabel!
     @IBOutlet weak var resultView: UIView!
+    @IBAction func takephoto(_ sender: Any) {
+        let settings = AVCapturePhotoSettings(format: [AVVideoCodecKey: AVVideoCodecType.jpeg])
+        
+        stillImageOutput.capturePhoto(with: settings, delegate:self)
+    }
+    @IBOutlet weak var takePhotoButton: UIButton!
     
     var captureSession: AVCaptureSession!
     var previewVideoLayer: AVCaptureVideoPreviewLayer!

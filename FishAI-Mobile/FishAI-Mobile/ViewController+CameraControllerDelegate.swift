@@ -61,12 +61,6 @@ extension ViewController: UIImagePickerControllerDelegate, UINavigationControlle
             }
         }
     }
-
-    @IBAction func testphoto(_ sender: Any) {
-        let settings = AVCapturePhotoSettings(format: [AVVideoCodecKey: AVVideoCodecType.jpeg])
-        
-        stillImageOutput.capturePhoto(with: settings, delegate:self)
-    }
         
     func photoOutput(_ output: AVCapturePhotoOutput, didFinishProcessingPhoto photo: AVCapturePhoto, error: Error?)
     {
@@ -91,7 +85,7 @@ extension ViewController: UIImagePickerControllerDelegate, UINavigationControlle
             cameraView.isHidden = false
             captureSession?.startRunning()
         }
-        //self.view.bringSubviewToFront(testPhotoButton)
+        self.view.bringSubviewToFront(takePhotoButton)
     }
     
     override func viewWillDisappear(_ animated:Bool){

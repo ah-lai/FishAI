@@ -13,6 +13,8 @@ import AVFoundation
 
 class ViewController: UIViewController {
     
+    // turn off the top panel (battery stuff)
+    
     @IBOutlet weak var cameraView: UIView!
     @IBOutlet weak var tmpImage: UIImageView!
     @IBOutlet weak var resultLabel: UILabel!

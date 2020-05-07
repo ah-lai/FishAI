@@ -25,14 +25,14 @@ extension ViewController: UIImagePickerControllerDelegate, UINavigationControlle
         captureSession = AVCaptureSession()
         captureSession?.sessionPreset = AVCaptureSession.Preset.hd4K3840x2160
         
-        guard let frontCamera = AVCaptureDevice.default(.builtInWideAngleCamera, for: AVMediaType.video, position: .front)
+        guard let backCamera = AVCaptureDevice.default(.builtInWideAngleCamera, for: AVMediaType.video, position: .back)
             else {
                 print("Unable to access front Camera")
                 return
         }
         
         do {
-            let input = try AVCaptureDeviceInput(device: frontCamera)
+            let input = try AVCaptureDeviceInput(device: backCamera)
             stillImageOutput = AVCapturePhotoOutput()
             
             if captureSession.canAddInput(input) && captureSession.canAddOutput(stillImageOutput) {
@@ -73,8 +73,8 @@ extension ViewController: UIImagePickerControllerDelegate, UINavigationControlle
         guard let imageData = photo.fileDataRepresentation()
             else{return}
 
-        var imageOutput = UIImage(data: imageData)
-        var newImage = UIImage(cgImage: (imageOutput?.cgImage!)!, scale: imageOutput!.scale, orientation: .leftMirrored)
+        let imageOutput = UIImage(data: imageData)
+        let newImage = UIImage(cgImage: (imageOutput?.cgImage!)!, scale: imageOutput!.scale, orientation: .leftMirrored)
         
         didTakePhoto = didTakePhoto ? false : true;
         
@@ -83,6 +83,8 @@ extension ViewController: UIImagePickerControllerDelegate, UINavigationControlle
             tmpImage.semanticContentAttribute = .forceRightToLeft
             tmpImage.image = newImage
             cameraView.isHidden = true
+            
+            classify(image: newImage)
         }
         else{
             tmpImage.isHidden = true;

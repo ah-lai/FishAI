@@ -42,7 +42,7 @@ class ViewController: UIViewController {
         let request = VNCoreMLRequest(model: vnModel) { [unowned self] request , _ in
             self.processingResult(for: request)
         }
-        request.imageCropAndScaleOption = .centerCrop // we need to make it the same size (244,244,3)
+        //request.imageCropAndScaleOption = .centerCrop // we need to make it the same size (244,244,3)
         return request
     }()
     
@@ -59,7 +59,14 @@ class ViewController: UIViewController {
         DispatchQueue.main.async {
             let results = (request.results! as! [VNClassificationObservation]).prefix(2)
             guard let observation = results.first else {return}
-            self.resultLabel.text = observation.identifier
+            
+            if (observation.confidence >= 0.90){
+               self.resultLabel.text = observation.identifier
+            }
+            else{
+                self.resultLabel.text = "Cannot Classify"
+            }
+            
             self.showResults()
         }
     }

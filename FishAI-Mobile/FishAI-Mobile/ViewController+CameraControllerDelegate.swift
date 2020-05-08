@@ -19,7 +19,9 @@ extension ViewController: UIImagePickerControllerDelegate, UINavigationControlle
     }
 
     override func viewWillAppear(_ animated: Bool) {
-        //tempImageView.isHidden = true;
+        
+        hideResults()   
+        
         super.viewWillAppear(animated)
         
         captureSession = AVCaptureSession()
@@ -81,8 +83,9 @@ extension ViewController: UIImagePickerControllerDelegate, UINavigationControlle
             classify(image: newImage)
         }
         else{
-            tmpImage.isHidden = true;
+            tmpImage.isHidden = true
             cameraView.isHidden = false
+            hideResults()
             captureSession?.startRunning()
         }
         self.view.bringSubviewToFront(takePhotoButton)

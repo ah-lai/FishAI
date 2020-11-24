@@ -15,6 +15,7 @@
 		2542D0E42463A687008F00D2 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 2542D0E22463A687008F00D2 /* LaunchScreen.storyboard */; };
 		2542D0EF2463A900008F00D2 /* FishAI_Model.mlmodel in Sources */ = {isa = PBXBuildFile; fileRef = 2542D0EE2463A900008F00D2 /* FishAI_Model.mlmodel */; };
 		2542D0F1246456A2008F00D2 /* ViewController+CameraControllerDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2542D0F0246456A2008F00D2 /* ViewController+CameraControllerDelegate.swift */; };
+		2542D0F32464DDDD008F00D2 /* icons8-eye-50.png in Resources */ = {isa = PBXBuildFile; fileRef = 2542D0F22464DDDD008F00D2 /* icons8-eye-50.png */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -28,6 +29,7 @@
 		2542D0E52463A687008F00D2 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		2542D0EE2463A900008F00D2 /* FishAI_Model.mlmodel */ = {isa = PBXFileReference; lastKnownFileType = file.mlmodel; name = FishAI_Model.mlmodel; path = ../../model/FishAI_Model.mlmodel; sourceTree = "<group>"; };
 		2542D0F0246456A2008F00D2 /* ViewController+CameraControllerDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "ViewController+CameraControllerDelegate.swift"; sourceTree = "<group>"; };
+		2542D0F22464DDDD008F00D2 /* icons8-eye-50.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = "icons8-eye-50.png"; path = "Assets.xcassets/icons8-eye-50.png"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -67,6 +69,7 @@
 				2542D0F0246456A2008F00D2 /* ViewController+CameraControllerDelegate.swift */,
 				2542D0DD2463A686008F00D2 /* Main.storyboard */,
 				2542D0E02463A687008F00D2 /* Assets.xcassets */,
+				2542D0F22464DDDD008F00D2 /* icons8-eye-50.png */,
 				2542D0E22463A687008F00D2 /* LaunchScreen.storyboard */,
 				2542D0E52463A687008F00D2 /* Info.plist */,
 			);
@@ -133,6 +136,7 @@
 			files = (
 				2542D0E42463A687008F00D2 /* LaunchScreen.storyboard in Resources */,
 				2542D0E12463A687008F00D2 /* Assets.xcassets in Resources */,
+				2542D0F32464DDDD008F00D2 /* icons8-eye-50.png in Resources */,
 				2542D0DF2463A686008F00D2 /* Main.storyboard in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
